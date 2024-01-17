@@ -1,5 +1,5 @@
 # ExerciciosPython_SquadAmeenahGurinFakim
 Exercícios Python (semana 3)
 
-Grupo Ameenah Gurib-Fakim:
+Nome das Integrandes da Squad Ameenah Gurib-Fakim:
 
