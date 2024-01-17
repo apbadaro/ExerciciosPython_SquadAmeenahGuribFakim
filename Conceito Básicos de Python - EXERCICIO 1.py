@@ -1,6 +1,8 @@
 
+print('Olá! Vamos calcular?')
+
 numero1 = int(input('Digite um número: '))
-numero2 = int(input('Digite um número: '))
+numero2 = int(input('E agora mais outro número: '))
 
 soma = numero1+numero2
 subtracao = numero1-numero2
