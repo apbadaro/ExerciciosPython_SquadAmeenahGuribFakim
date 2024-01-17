@@ -13,3 +13,5 @@ print(f'A soma dos números digitados foi {soma}')
 print(f'A subtração dos números digitados foi {subtracao} ')
 print(f'A multiplicação dos números digitados foi {multiplicacao}')
 print(f'A divisão dos números digitados foi {divisao}')
+
+input("Pressione Enter para sair.")
