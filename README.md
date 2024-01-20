@@ -1,6 +1,7 @@
 # ExerciciosPython_SquadAmeenahGurinFakim
-Exercícios Python (semana 3)
+_Exercícios de Python (semana 3)_
 
-Nome das Integrandes da Squad Ameenah Gurib-Fakim:
+Nome das integrantes da Squad Ameenah Gurib-Fakim:
 
-Juliana Torres Delunardo
+- Ana Paula Badaró
+- Juliana Torres Delunardo
