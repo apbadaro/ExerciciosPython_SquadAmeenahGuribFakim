@@ -8,3 +8,4 @@ if usuario == "admin" and senha == "admin123" :
     print("Acesso permitido! ")
 else:
     print("Usuario ou senha incorretos. Acesso negado. ")
+    #rename
