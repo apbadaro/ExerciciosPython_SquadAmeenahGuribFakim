@@ -8,3 +8,4 @@ Nome das integrantes da Squad Ameenah Gurib-Fakim:
 - Jessica Souza
 - Juliana Torres Delunardo
 - Rafaela Marques
+- Núbia Santos Lima
