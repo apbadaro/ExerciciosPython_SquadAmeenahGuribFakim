@@ -1,5 +1,0 @@
-#Exercicio 6
-
-
-
-
