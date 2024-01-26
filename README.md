@@ -5,7 +5,7 @@ Para a realização do desafio em equipe, usamos o nosso espaço na plataforma d
 <br><br>
 | Nome da integrante | Exercícios realizados |
 |--------------------|-----------------------|
-| Ana Paula Badaró   | Conceitos Básicos: exercícios 5, 6, 7, 8<br>Listas e Tuplas: exercício 5|
+| Ana Paula Badaró   | Conceitos Básicos: exercícios 5, 6, 7, 8<br>Listas e Tuplas: exercício 5<br>Funções: exercício 6|
 | Aparecida Xavier dos Santos | Conceitos Básicos: exercícios 1, 2, 3, 4 |
 | Gabriella Oliveira | - |
 | Jessica Souza | Tomada de Decisão: exercícios 5, 6, 7, 8<br>Funções: exercícios 4, 5 |
