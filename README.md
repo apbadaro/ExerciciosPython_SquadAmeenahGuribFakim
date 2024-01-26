@@ -10,3 +10,4 @@ Nome das integrantes da Squad Ameenah Gurib-Fakim:
 - Rafaela Marques
 - Núbia Santos Lima
 - Marcia Moreira
+- Monique Cristina Mendes
