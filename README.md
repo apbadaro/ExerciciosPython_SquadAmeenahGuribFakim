@@ -12,4 +12,4 @@ Nome das integrantes da Squad Ameenah Gurib-Fakim:
 - Marcia Moreira
 - Monique Cristina
 
-Para a realização do desafio em conjunto decidimos dividir entre cada integrante de 3 a 4 exercícios a serem realizados. Usamos o nosso espaço na plataforma do Discord para nos comunicar e nos ajudar. 
+Para a realização do desafio em conjunto decidimos dividir entre cada integrante de 3 a 4 exercícios. Usamos o nosso espaço na plataforma do Discord para nos comunicar e nos ajudar. 
