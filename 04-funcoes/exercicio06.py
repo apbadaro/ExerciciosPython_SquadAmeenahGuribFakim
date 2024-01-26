@@ -19,7 +19,6 @@ print(
     "J O G O   D A   F O R C A\nTEMA: ESPAÇO\nVOCÊ TEM 6 (SEIS) TENTATIVAS. BOA SORTE!"
 )
 print("==============================")
-print(palavra_secreta)
 
 
 while tentativas > 0:
