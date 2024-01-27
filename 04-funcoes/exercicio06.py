@@ -9,37 +9,48 @@ Dica: Você precisará importar uma biblioteca.
 """
 from random import choice
 
-palavras = ["asteroide", "estrela", "saturno", "cometa", "telescópio"]
-palavra_secreta = choice(palavras)
-tentativas = 6
-letras_adivinhadas = []
 
-print("==============================")
-print(
-    "J O G O   D A   F O R C A\nTEMA: ESPAÇO\nVOCÊ TEM 6 (SEIS) TENTATIVAS. BOA SORTE!"
-)
-print("==============================")
+def main():
+    print("==============================")
+    print(
+        "J O G O   D A   F O R C A\nTEMA: ESPAÇO\nVOCÊ TEM 6 (SEIS) TENTATIVAS. BOA SORTE!"
+    )
+    print("==============================")
+
+    jogo_da_forca()
 
 
-while tentativas > 0:
-    for letra in palavra_secreta:
-        if letra in letras_adivinhadas:
-            print(letra.upper(), end="")
+def jogo_da_forca():
+    palavras = ["asteroide", "estrela", "saturno", "cometa", "telescópio"]
+    palavra_secreta = choice(palavras).lower()
+    tentativas = 6
+    letras_adivinhadas = []
+
+    while tentativas > 0:
+        for letra in palavra_secreta:
+            if letra in letras_adivinhadas:
+                print(letra.upper(), end="")
+            else:
+                print("_ ", end="")
+        chute = input("\n\nDigite uma letra: ").lower()
+
+        if chute in palavra_secreta:
+            print(f"Mandou bem!")
+            letras_adivinhadas.append(chute)
         else:
-            print("_ ", end="")
-    chute = input("\n\nDigite uma letra: ").lower()
+            tentativas -= 1
+            print(f"Ih, você errou!\nVocê tem: {tentativas} tentativa(s).")
+        if set(palavra_secreta) == set(letras_adivinhadas):
+            print(
+                f"Parabéns! Você adivinhou a palavra secreta: {palavra_secreta.upper()}."
+            )
+            break
+        elif tentativas == 0:
+            print(
+                f"\nSuas tentativas acabaram! A palavra secreta era: {palavra_secreta.upper()}."
+            )
+            break
 
-    if chute in palavra_secreta:
-        print(f"Mandou bem!")
-        letras_adivinhadas.append(chute)
-    else:
-        tentativas -= 1
-        print(f"Ih, você errou!\nVocê tem: {tentativas} tentativa(s).")
-    if set(palavra_secreta) == set(letras_adivinhadas):
-        print(f"Parabéns! Você adivinhou a palavra secreta: {palavra_secreta.upper()}.")
-        break
-    elif tentativas == 0:
-        print(
-            f"\nSuas tentativas acabaram! A palavra secreta era: {palavra_secreta.upper()}."
-        )
-        break
+
+if __name__ == "__main__":
+    main()
