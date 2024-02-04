@@ -1,0 +1,41 @@
+import sqlite3
+
+#serve para usar python com banco de dados
+
+conexao = sqlite3.connect('bancosqlite')
+cursor = conexao.cursor()
+
+# Exercicio 1 - Criar tabela
+# cursor.execute('CREATE TABLE alunos(id INT, nome VARCHAR(50), idade INT, curso VARCHAR(25));')
+
+# Exercício 2 - Inserindo dados
+# cursor.execute('INSERT INTO alunos values(1, "Rafaela", 35, "ADS")')
+# cursor.execute('INSERT INTO alunos values(2, "Ana Paula", 25, "Django"),(3, "Aparecida", 23, "Python"),(4, "Gabriela", 26, "Back-end")')
+# cursor.execute('INSERT INTO alunos values(5, "Jessica", 29, "ADS")')
+
+
+# # Exercicio 3 - Consultando dados
+dadosAlunos = cursor.execute('SELECT * FROM alunos')
+for usuario in dadosAlunos:
+  print(usuario)
+
+dadosAlunos = cursor.execute('SELECT * FROM alunos WHERE idade > 20')
+for usuario in dadosAlunos:
+  print(usuario)
+
+dadosAlunos = cursor.execute('SELECT COUNT(*) AS Total_Alunos FROM alunos')
+for usuario in dadosAlunos:
+  print(usuario)
+
+# Exercicio 4 - Update e Delete
+# cursor.execute('UPDATE alunos SET idade=21 WHERE id=5')
+# cursor.execute('DELETE FROM alunos WHERE id=4')
+
+# Exercicio 5 - Criar tabela e inserir dados
+# cursor.execute('CREATE TABLE clientes(id INT PK, nome VARCHAR(50), idade INT, saldo FLOAT)')
+cursor.execute('INSERT INTO clientes VALUES (91, "Vanessa", 44, 3900.00), (93, "Patrícia", 37, 4500.00)')
+
+conexao.commit()
+conexao.close
+
+
