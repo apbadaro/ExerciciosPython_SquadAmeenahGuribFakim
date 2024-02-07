@@ -1,4 +1,4 @@
-from biblioteca import Autor, Livro, Usuario
+from biblioteca_classes import Autor, Livro, Usuario
 
 
 def main():
@@ -19,7 +19,7 @@ def main():
         "Mundo Mágico",  # editora
         [autor1],  # lista porque pode haver um ou mais autores
         ["Ficção, Fantasia, Infanto-juvenil"],  # exemplo de gêneros
-        1  # exemplo de exemplares emprestados
+        1,  # exemplo de exemplares emprestados
     )
     livro2 = Livro(
         2,
@@ -27,7 +27,7 @@ def main():
         "Mundo Mágico",
         [autor1],
         ["Ficção, Fantasia, Infanto-juvenil"],
-        1
+        1,
     )
     livro3 = Livro(
         3,
@@ -35,7 +35,7 @@ def main():
         "Mundo Mágico",
         [autor1],
         ["Ficção, Fantasia, Infanto-juvenil"],
-        1
+        1,
     )
     livro4 = Livro(
         4,
@@ -43,13 +43,13 @@ def main():
         "Lua Nova",
         [autor2],
         ["Ficção, Fantasia, Infanto-juvenil"],
-        3
+        3,
     )
 
     # TESTANDO SAÍDAS NO TERMINAL
 
     print(
-        f"\n{usuario1.nome.upper()} alugou {livro2.titulo.upper()} e {livro3.titulo.upper()}.\n"
+        f"\n{usuario1.nome.upper()} alugou '{livro2.titulo.upper()}' e '{livro3.titulo.upper()}'.\n"
     )
     print(f"Usuário #2: {usuario2}")
     print()
