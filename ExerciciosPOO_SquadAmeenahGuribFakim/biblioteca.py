@@ -47,15 +47,17 @@ def main():
     )
 
     # TESTANDO SAÍDAS NO TERMINAL
-
+    print("\nT E S T E S :")
+    print("----------------------------")
     print(
-        f"\n{usuario1.nome.upper()} alugou '{livro2.titulo.upper()}' e '{livro3.titulo.upper()}'.\n"
+        f"Usuário #1 aluga livros ID 2 e 3:\n{usuario1.nome.upper()} alugou '{livro2.titulo.upper()}' e '{livro3.titulo.upper()}'."
     )
-    print(f"Usuário #2: {usuario2}")
-    print()
-    print(livro1)
-    print()
-    print(livro4)
+    print("----------------------------")
+    print(f"Usuário #1: {usuario1}")
+    print("----------------------------")
+    print(f"Livro #1: {livro1}")
+    print("----------------------------")
+    print(f"Autor #1: {autor1}")
     print()
 
 

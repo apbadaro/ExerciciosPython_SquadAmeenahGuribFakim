@@ -1,17 +1,14 @@
+# GERENCIAMENTO DE BIBLIOTECA
+
+
 class Pessoa:
     def __init__(self, nome, telefone, nacionalidade):
-        if not nome:
-            raise ValueError("Nome deve ser informado.")
-        if not telefone:
-            raise ValueError("Telefone deve ser informado.")
-        if not nacionalidade:
-            raise ValueError("Nacionalidade deve ser informada.")
-        self.nome = nome
-        self.telefone = telefone
-        self.nacionalidade = nacionalidade
+        self.nome = nome  # público
+        self._telefone = telefone  # protegido
+        self._nacionalidade = nacionalidade  # protegido
 
     def __str__(self):
-        return f"{self.nome}, {self.telefone}, {self.nacionalidade}"
+        return f"Nome: {self.nome}, Telefone: {self._telefone}, Nacionalidade: {self._nacionalidade}"
 
 
 class Usuario(Pessoa):
