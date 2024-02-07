@@ -1,5 +1,5 @@
-# ExerciciosPOO_SquadAmeenahGuribFakim
-_Exercícios de POO (semana 4)_
+# ExerciciosBancoDeDados_SquadAmeenahGuribFakim
+_Exercícios de Banco de Dados (semana 4)_
 
 Para a realização do desafio em equipe, usamos o nosso espaço na plataforma do Discord para nos comunicar e ajudar.
 <br><br>
