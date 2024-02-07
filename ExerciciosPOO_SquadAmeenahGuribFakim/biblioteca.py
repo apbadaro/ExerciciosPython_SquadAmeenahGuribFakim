@@ -1,4 +1,4 @@
-from biblioteca_classes import Autor, Livro, Usuario
+from biblioteca import Autor, Livro, Usuario
 
 
 def main():
@@ -19,9 +19,7 @@ def main():
         "Mundo Mágico",  # editora
         [autor1],  # lista porque pode haver um ou mais autores
         ["Ficção, Fantasia, Infanto-juvenil"],  # exemplo de gêneros
-        3,  # exemplo de max renovação
-        2,  # exemplo de exemplares disponíveis
-        1,  # exemplo de exemplares emprestados
+        1  # exemplo de exemplares emprestados
     )
     livro2 = Livro(
         2,
@@ -29,9 +27,7 @@ def main():
         "Mundo Mágico",
         [autor1],
         ["Ficção, Fantasia, Infanto-juvenil"],
-        3,
-        2,
-        1,
+        1
     )
     livro3 = Livro(
         3,
@@ -39,9 +35,7 @@ def main():
         "Mundo Mágico",
         [autor1],
         ["Ficção, Fantasia, Infanto-juvenil"],
-        3,
-        2,
-        1,
+        1
     )
     livro4 = Livro(
         4,
@@ -49,9 +43,7 @@ def main():
         "Lua Nova",
         [autor2],
         ["Ficção, Fantasia, Infanto-juvenil"],
-        4,
-        1,
-        3,
+        3
     )
 
     # TESTANDO SAÍDAS NO TERMINAL

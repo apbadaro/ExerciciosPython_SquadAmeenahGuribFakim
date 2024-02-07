@@ -32,8 +32,6 @@ class Livro:
         editora,
         autores,
         generos,
-        maxRenovacao,
-        exemplaresDisponiveis,
         exemplaresEmprestados,
     ):
         self.id = id
@@ -41,9 +39,10 @@ class Livro:
         self.editora = editora
         self.generos = generos
         self.autores = autores
-        self.maxRenovacao = maxRenovacao
-        self.exemplaresDisponiveis = exemplaresDisponiveis
+        self.maxRenovacao = 0
+        self.exemplaresDisponiveis = 5
         self.exemplaresEmprestados = exemplaresEmprestados
+        self.emprestado = False
 
     def emprestimo(self):
         if self.exemplaresDisponiveis > 0:
@@ -53,11 +52,23 @@ class Livro:
             print("Não há exemplares disponíveis para empréstimo no momento.")
 
     def devolucao(self):
-        if self.exemplaresEmprestadas > 0:
+        if self.exemplaresEmprestados > 0:
             self.exemplaresDisponiveis += 1
-            self.exemplaresEmprestadas -= 1
+            self.exemplaresEmprestados -= 1
         else:
             print("Todos os exemplares foram devolvidos.")
 
+    def renovacao(self):
+        if self.maxRenovacao < 3:
+            self.maxRenovacao+=1
+        else:
+            print("O livro não pode mais ser renovado.")
+    
+    def livro_emprestado(self):
+        self.emprestado = True
+    
+    def livro_devolvido(self):
+        self.emprestado = False
+    
     def __str__(self):
-        return f"Título: {self.titulo}\nExemplares disponíveis: {self.exemplaresDisponiveis}"
+        return f"Título: {self.titulo}\nExemplares disponíveis: {self.exemplaresDisponiveis}\nNúmero de renovações: { self.maxRenovacao}"
