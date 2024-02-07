@@ -60,15 +60,15 @@ class Livro:
 
     def renovacao(self):
         if self.maxRenovacao < 3:
-            self.maxRenovacao+=1
+            self.maxRenovacao += 1
         else:
             print("O livro não pode mais ser renovado.")
-    
+
     def livro_emprestado(self):
         self.emprestado = True
-    
+
     def livro_devolvido(self):
         self.emprestado = False
-    
+
     def __str__(self):
-        return f"Título: {self.titulo}\nExemplares disponíveis: {self.exemplaresDisponiveis}\nNúmero de renovações: { self.maxRenovacao}"
+        return f"Título: '{self.titulo}'\nExemplares disponíveis: {self.exemplaresDisponiveis}\nNúmero de renovações: { self.maxRenovacao}"
