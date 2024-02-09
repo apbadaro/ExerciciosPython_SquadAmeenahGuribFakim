@@ -18,8 +18,9 @@ def main():
         "Harry Potter e a Pedra Filosofal",  # título
         "Mundo Mágico",  # editora
         [autor1],  # lista porque pode haver um ou mais autores
-        ["Ficção, Fantasia, Infanto-juvenil"],  # exemplo de gêneros
-        1,  # exemplo de exemplares emprestados
+        ["Ficção, Fantasia, Infanto-juvenil"],  # gêneros
+        6,  # exemplares disponíveis
+        1,  # exemplares emprestados
     )
     livro2 = Livro(
         2,
@@ -27,7 +28,8 @@ def main():
         "Mundo Mágico",
         [autor1],
         ["Ficção, Fantasia, Infanto-juvenil"],
-        1,
+        5,
+        2,
     )
     livro3 = Livro(
         3,
@@ -35,7 +37,8 @@ def main():
         "Mundo Mágico",
         [autor1],
         ["Ficção, Fantasia, Infanto-juvenil"],
-        1,
+        4,
+        2,
     )
     livro4 = Livro(
         4,
@@ -44,21 +47,16 @@ def main():
         [autor2],
         ["Ficção, Fantasia, Infanto-juvenil"],
         3,
+        1,
     )
 
     # TESTANDO SAÍDAS NO TERMINAL
-    print("\nT E S T E S :")
-    print("----------------------------")
-    print(
-        f"Usuário #1 aluga livros ID 2 e 3:\n{usuario1.nome.upper()} alugou '{livro2.titulo.upper()}' e '{livro3.titulo.upper()}'."
-    )
-    print("----------------------------")
-    print(f"Usuário #1: {usuario1}")
-    print("----------------------------")
-    print(f"Livro #1: {livro1}")
-    print("----------------------------")
-    print(f"Autor #1: {autor1}")
-    print()
+    print("\n( ( (  BIBLIOTECA  ) ) )\n")
+    print(usuario1)
+    print("--------------------------------")
+    print(livro2)
+    print("--------------------------------")
+    print(autor1)
 
 
 if __name__ == "__main__":
