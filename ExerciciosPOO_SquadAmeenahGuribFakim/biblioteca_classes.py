@@ -90,7 +90,7 @@ class Livro:
             print("O livro não pode mais ser renovado.")
 
     def livro_emprestado(self):
-        self.emprestado = False
+        self.emprestado = True
 
     def livro_devolvido(self):
         self.emprestado = False
