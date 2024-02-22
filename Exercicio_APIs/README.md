@@ -12,7 +12,7 @@ Para a divisão das tarefas, desenvolvemos um sorteador em Python.
 
 [![sorteio.py](https://i.ibb.co/k09Pxfc/Captura-de-Tela-2024-02-21-a-s-17-00-41.png)](https://i.ibb.co/Gktr0LP/Captura-de-Tela-2024-02-21-a-s-17-00-41.png)
 
-## Resultado do sorteio:
+## Resultado do sorteio
 
 | Integrante da Squad | Tarefa|
 |----------------------|--------|
