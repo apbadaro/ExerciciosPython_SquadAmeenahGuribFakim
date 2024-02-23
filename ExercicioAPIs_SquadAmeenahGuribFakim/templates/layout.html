@@ -15,28 +15,10 @@
     />
 
     <title>Rick and Morty API</title>
-    <style>
-      .full-page {
-        height: 100vh;
-        overflow: hidden;
-      }
-      .image-container {
-        text-align: center;
-      }
-    </style>
   </head>
-  <body class="full-page">
+  <body>
     <main class="container">
-      {%include "nav.html" %}
-      <div class="vh-100 d-flex justify-content-center align-items-center">
-        <div class="image-container">
-          <img
-            src="https://i.ibb.co/grTzBbM/rick-and-morty.png"
-            alt="Rick and Morty"
-            width="95%"
-          />
-        </div>
-      </div>
+      {%include "nav.html" %} {% block content %} {% endblock %}
     </main>
   </body>
 </html>
