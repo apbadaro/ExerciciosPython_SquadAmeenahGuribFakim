@@ -3,6 +3,8 @@ import urllib.request as ur
 import json
 import ssl
 
+# Desabilita o SSL para evitar o erro "certificate_verify_failed"
+ssl._create_default_https_context = ssl._create_unverified_context
 
 app = Flask(__name__)
 
@@ -16,10 +18,6 @@ def index():
 # JSON DE TODOS OS PERSONAGENS
 @app.route("/lista")
 def get_characters_json():
-
-    # Desabilita o SSL para evitar o erro "certificate_verify_failed"
-    ssl._create_default_https_context = ssl._create_unverified_context
-
     with ur.urlopen("https://rickandmortyapi.com/api/character/") as url:
         response = url.read()
         characters_list = json.loads(response)
@@ -31,9 +29,6 @@ def get_characters_json():
                 "status": character["status"],
             }
             characters.append(character)
-
-    # Reabilita o SSL após a requisição HTTPS
-    ssl._create_default_https_context = ssl._create_default_https_context
 
     return {"characters": characters}
 
