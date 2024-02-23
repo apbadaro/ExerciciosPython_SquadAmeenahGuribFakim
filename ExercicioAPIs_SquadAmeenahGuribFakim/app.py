@@ -7,7 +7,7 @@ import ssl
 app = Flask(__name__)
 
 
-# JSON COM TODOS OS PERSONAGENS
+# PÁGINA PRINCIPAL -> o html precisa ser atualizado para deixar de exibir os personagens
 @app.route("/")
 def get_characters_page():
     # Desabilita o SSL para evitar o erro "certificate_verify_failed"
@@ -21,12 +21,12 @@ def get_characters_page():
     # Reabilita o SSL após a requisição HTTPS
     ssl._create_default_https_context = ssl._create_default_https_context
 
-    return render_template("characters.html", characters=characters_data["results"])
+    return render_template("index.html")
 
 
-# LISTA DE TODOS OS PERSONAGENS
+# JSON DE TODOS OS PERSONAGENS
 @app.route("/lista")
-def get_characters():
+def get_characters_json():
     with ur.urlopen("https://rickandmortyapi.com/api/character/") as url:
         response = url.read()
         characters_list = json.loads(response)
@@ -40,6 +40,17 @@ def get_characters():
             characters.append(character)
 
         return {"characters": characters}
+
+
+# PÁGINA DOS PERSONAGENS
+@app.route("/characters")
+def get_characters():
+    url = "https://rickandmortyapi.com/api/character/"
+    response = ur.urlopen(url)
+    data = response.read()
+    characters_data = json.loads(data)
+
+    return render_template("characters.html", characters=characters_data["results"])
 
 
 # PERFIL DE CADA PERSONAGEM
@@ -57,14 +68,13 @@ def get_profile(id):
 
 
 # PERFIL DE CADA LOCALIZAÇÃO: Ana Paula Badaró
-@app.route("/location/<id>")  # ATUALIZAR PARA A ROTA CORRETA!!
+@app.route("/location/<id>")
 def get_location(id):
     url = f"https://rickandmortyapi.com/api/location/{id}"
     try:
         response = ur.urlopen(url)
         data = response.read()
         location_profile = json.loads(data)
-        # "location.html" -> ATUALIZAR PARA A URL CORRETA!!
         return render_template("location.html", location=location_profile)
 
     except Exception as e:
