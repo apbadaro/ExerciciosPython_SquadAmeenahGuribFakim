@@ -7,7 +7,7 @@ import ssl
 app = Flask(__name__)
 
 
-# PÁGINA PRINCIPAL -> o html precisa ser atualizado para deixar de exibir os personagens
+# PÁGINA PRINCIPAL
 @app.route("/")
 def get_characters_page():
     # Desabilita o SSL para evitar o erro "certificate_verify_failed"
