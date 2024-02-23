@@ -9,24 +9,17 @@ app = Flask(__name__)
 
 # PÁGINA PRINCIPAL
 @app.route("/")
-def get_characters_page():
-    # Desabilita o SSL para evitar o erro "certificate_verify_failed"
-    ssl._create_default_https_context = ssl._create_unverified_context
-
-    url = "https://rickandmortyapi.com/api/character/"
-    response = ur.urlopen(url)
-    data = response.read()
-    characters_data = json.loads(data)
-
-    # Reabilita o SSL após a requisição HTTPS
-    ssl._create_default_https_context = ssl._create_default_https_context
-
+def index():
     return render_template("index.html")
 
 
 # JSON DE TODOS OS PERSONAGENS
 @app.route("/lista")
 def get_characters_json():
+
+    # Desabilita o SSL para evitar o erro "certificate_verify_failed"
+    ssl._create_default_https_context = ssl._create_unverified_context
+
     with ur.urlopen("https://rickandmortyapi.com/api/character/") as url:
         response = url.read()
         characters_list = json.loads(response)
@@ -39,7 +32,10 @@ def get_characters_json():
             }
             characters.append(character)
 
-        return {"characters": characters}
+    # Reabilita o SSL após a requisição HTTPS
+    ssl._create_default_https_context = ssl._create_default_https_context
+
+    return {"characters": characters}
 
 
 # PÁGINA DOS PERSONAGENS
@@ -55,7 +51,7 @@ def get_characters():
 
 # PERFIL DE CADA PERSONAGEM
 @app.route("/profile/<id>")
-def get_profile(id):
+def get_single_profile(id):
     url = f"https://rickandmortyapi.com/api/character/{id}"
     response = ur.urlopen(url)
     data = response.read()
@@ -75,7 +71,7 @@ def get_profile(id):
 
 # PERFIL DE CADA LOCALIZAÇÃO: Ana Paula Badaró
 @app.route("/location/<id>")
-def get_location(id):
+def get_single_location(id):
     url = f"https://rickandmortyapi.com/api/location/{id}"
     try:
         response = ur.urlopen(url)
