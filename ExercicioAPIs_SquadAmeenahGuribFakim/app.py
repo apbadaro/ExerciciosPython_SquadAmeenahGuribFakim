@@ -49,6 +49,12 @@ def get_profile(id):
     return render_template("profile.html", profile=character_profile)
 
 
+# LISTA DE TODOS OS EPISÓDIOS: Jessica Souza
+
+
+# PERFIL DE CADA EPISÓDIO: Monique Cristina Cerqueira de Souza Mendes
+
+
 # LISTA DE TODAS AS LOCALIZAÇÕES: Marcia Moreira
 
 
@@ -65,12 +71,6 @@ def get_location(id):
 
     except Exception as e:
         return f"Erro inesperado: {str(e)}"
-
-
-# LISTA DE TODOS OS EPISÓDIOS: Jessica Souza
-
-
-# PERFIL DE CADA EPISÓDIO: Monique Cristina Cerqueira de Souza Mendes
 
 
 if __name__ == "__main__":
