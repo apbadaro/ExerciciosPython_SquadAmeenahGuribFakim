@@ -56,7 +56,14 @@ def get_single_profile(id):
 
 
 # LISTA DE TODOS OS EPISÓDIOS: Jessica Souza
+@app.route("/episode")
+def get_episode_data():
+    url = f"https://rickandmortyapi.com/api/episode/"
+    response = ur.urlopen(url)
+    data = response.read()
+    episode_data = json.loads(data)
 
+    return render_template("episode.html", episode=episode_data)
 
 # PERFIL DE CADA EPISÓDIO: Monique Cristina Cerqueira de Souza Mendes
 
