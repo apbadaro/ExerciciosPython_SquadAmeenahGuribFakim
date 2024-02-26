@@ -63,7 +63,8 @@ def get_episode_data():
     data = response.read()
     episode_data = json.loads(data)
 
-    return render_template("episode.html", episode=episode_data)
+
+    return render_template("episode.html", episodes=episode_data["results"])
 
 # PERFIL DE CADA EPISÓDIO: Monique Cristina Cerqueira de Souza Mendes
 
