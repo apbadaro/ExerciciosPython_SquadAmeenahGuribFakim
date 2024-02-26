@@ -69,6 +69,14 @@ def get_episode_data():
 
 
 # LISTA DE TODAS AS LOCALIZAÇÕES: Marcia Moreira
+@app.route("/location")
+def get_location():
+    url_for = "https://rickandmortyapi.com/api/location"
+    response = ur.urlopen(url_for)
+    data = response.read()
+    location_data = json.loads(data)
+
+    return render_template("locations.html", location=location_data)
 
 
 # PERFIL DE CADA LOCALIZAÇÃO: Ana Paula Badaró
