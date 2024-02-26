@@ -4,7 +4,7 @@ Esta pasta contém o código desenvolvido pela Squad Ameenah Gurib-Fakim para o 
 
 ## Descrição
 
-O projeto consistia em desenvolver um sistema em Python utilizando o framework Flask para consumir a API da série "Rick and Morty". Foram implementadas funcionalidades para listar os personagens, as localizações e os episódios da série, bem como uma página de perfil detalhada para cada personagem.
+O projeto consiste em desenvolver um sistema em Python utilizando o framework Flask para consumir a API da série "Rick and Morty". Foram implementadas funcionalidades para listar os personagens, as localizações e os episódios da série, bem como uma página de perfil detalhada para cada personagem.
 
 ## Divisão das tarefas
 
@@ -26,3 +26,23 @@ Para a divisão das tarefas, desenvolvemos um sorteador em Python.
 | Rafaela Marques | Desenvolver a lógica de integração para localizações |
 | Gabriella Oliveira | - |
 | Pamela Casatte Pereira | - |
+
+## Informações do Projeto:
+
+### 01 - Recursos utilizados:
+
+- Linguagem de Programação: Python
+- Front End: Html, CSS e Bootstrap
+- Editor de Código: VsCode
+- API Pública: Rick and Morty (Link: https://rickandmortyapi.com/)
+- Micro Framework: Flask (Documentação: https://flask-ptbr.readthedocs.io/en/latest/)
+- Ambiente Virtual: Virtualenv (Documentação: https://virtualenv.pypa.io/en/latest/cli_interface.html)
+- Ferramenta de teste de API: Postman
+
+### 02 - Links da API Rick and Morty:  
+
+-  Link Principal: https://rickandmortyapi.com/
+-  Documentação: https://rickandmortyapi.com/documentation
+-  Personagens: https://rickandmortyapi.com/api/character/ 
+-  Localizações: https://rickandmortyapi.com/api/location
+-  Episódios: https://rickandmortyapi.com/api/episode/
