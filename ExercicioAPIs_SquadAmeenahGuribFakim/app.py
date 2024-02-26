@@ -66,8 +66,20 @@ def get_episode_data():
 
     return render_template("episode.html", episodes=episode_data["results"])
 
-# PERFIL DE CADA EPISÓDIO: Monique Cristina Cerqueira de Souza Mendes
+# PERFIL DE CADA EPISÓDIO: Monique Cristina Cerqueira de Souza Mendes| Núbia Santos Lima
+@app.route("/episode/<id>")
+def get_single_episode(id):
+    url = f"https://rickandmortyapi.com/api/episode/{id}"
+    
+    try:
+        response = ur.urlopen(url)
+        data = response.read()
+        episode_profile = json.loads(data)
+        
+        return render_template("episode_profile.html", episode=episode_profile)
 
+    except Exception as e:
+        return f"Erro inesperado: {str(e)}"
 
 # LISTA DE TODAS AS LOCALIZAÇÕES: Marcia Moreira
 @app.route("/location")
