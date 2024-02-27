@@ -108,3 +108,9 @@ def get_single_location(id):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+# PÁGINA PRINCIPAL x FOOTER: Marcia Moreira
+@app.route("/home")
+def home():
+  return render_template("index.html")
+

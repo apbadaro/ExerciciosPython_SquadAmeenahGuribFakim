@@ -1,30 +1,43 @@
 {% extends 'layout.html' %} {% block content %}
-<div class="container mt-5">
-<!-- <div class="row"> -->
-    <h1>Localizações</h1>
+<div>
+        <title>Localizações</title>
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th, td {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+        </style>
+    </head>
+    <body>
 
-    <!-- Tentei e não consegui - errado  -->
-    <div>
-        "id": 1,
-        "name": "Earth",
-        "type": "Planet",
-        "dimension": "Dimension C-137",
-    </div>
-    <ul class="list-group">
-        {% for location in locations %}
-        <li class="list-group-item"><a href="{{ url_for('get_location', id=location_data.id) }}">{{ location_data.name }}</a></li>
-        {% endfor %}
-    </ul>
+    <h2>Localizações</h2>
 
-
-    <ul class="list-group">
-        {% for location in locations %}
-        <li class="list-group-item"><a href="{{ url_for('get_location', id=location.id) }}">{{ location.name }}</a></li>
-        {% endfor %}
-    </ul>
-    <p>
-        <a href="/location/{{location.id}}" class="btn btn-primary">Ver detalhes</a>
-    </p>
-
+    <table>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Data de Lançamento</th>
+        <th>Código</th>
+    </tr>
+    <!-- Loop for para iterar sobre as localizações -->
+    {% for location in locations %}
+        <tr>
+        <td>{{ location.id }}</td>
+        <td>{{ location.name }}</td>
+        <td>{{ location.created.split('T')[0] }}</td>
+        <td>{{ location.url.split('/')[-1] }}</td>
+        </tr>
+    {% endfor %}
+    </table>
 </div>
 {% endblock %}
+
+
