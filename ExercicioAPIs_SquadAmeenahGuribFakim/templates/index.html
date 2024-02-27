@@ -14,14 +14,16 @@
       crossorigin="anonymous"
     />
 
-    <title>Rick and Morty API</title>
+    <title id="title">Rick and Morty API</title>
     <style>
+
       .full-page {
         height: 100vh;
-        overflow: hidden;
+        /* overflow: hidden; */
       }
       .image-container {
         text-align: center;
+        padding-bottom: 20px;
       }
     </style>
   </head>
@@ -37,6 +39,7 @@
           />
         </div>
       </div>
+      {%include "footer.html" %}
     </main>
   </body>
 </html>
