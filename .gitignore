@@ -1,0 +1,7 @@
+# Arquivos a serem desconsiderados no Commit para o GitHub:
+
+# Ignorar a pasta de Ambiente Virtual:
+.venv/
+
+# Ignorar o arquivo de Anotações Diversas:
+anotacoes_MM.py
