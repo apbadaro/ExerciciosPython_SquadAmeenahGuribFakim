@@ -1,0 +1,17 @@
+# Arquivos a serem desconsiderados no Commit para o GitHub:
+
+# Ignorar a pasta de Ambiente Virtual:
+.venv/
+
+# Ignorar a pasta __pycache__:
+__pycache__/
+
+# Ignorar o arquivo de Anotações Diversas:
+anotacoes_MM.py
+
+# Ignorar o arquivo pdf com Orientação das Atividades:
+
+Desafio_Rick_e_Morty-venc_01-03-24.pdf
+ExerciciosAPIs-venc_01-03-24.pdf
+
+tempCodeRunnerFile.py

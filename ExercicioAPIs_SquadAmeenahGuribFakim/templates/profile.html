@@ -1,4 +1,15 @@
 {% extends 'layout.html' %} {% block content %}
+<style>
+  .top {
+    margin-top: 30px;
+  }
+</style>
+
+<div class="top">
+  <center><h1>{{profile.name}}</h1></center>
+  <br />
+</div>
+
 <div class="row">
   <div class="col-sm-3 col-6">
     <img
@@ -27,4 +38,12 @@
 
   </div>
 </div>
+</div>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
 {% endblock %}

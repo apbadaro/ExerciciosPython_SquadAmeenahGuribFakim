@@ -27,7 +27,7 @@ Para a divisão das tarefas, desenvolvemos um sorteador em Python.
 | Gabriella Oliveira | - |
 | Pamela Casatte Pereira | - |
 
-## Informações do Projeto:
+## Informações do Projeto
 
 ### 01 - Recursos utilizados:
 
