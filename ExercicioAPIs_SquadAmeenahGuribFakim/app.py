@@ -3,19 +3,19 @@ import urllib.request as ur
 import json
 import ssl
 
-# Desabilita o SSL para evitar o erro "certificate_verify_failed"
+# Disables SSL to bypass the "certificate_verify_failed" error
 ssl._create_default_https_context = ssl._create_unverified_context
 
 app = Flask(__name__)
 
 
-# PÁGINA PRINCIPAL
+# Main page
 @app.route("/")
 def index():
     return render_template("index.html")
 
 
-# JSON DE TODOS OS PERSONAGENS
+# Characters' JSON
 @app.route("/lista")
 def get_characters_json():
     with ur.urlopen("https://rickandmortyapi.com/api/character/") as url:
@@ -33,7 +33,7 @@ def get_characters_json():
     return {"characters": characters}
 
 
-# PÁGINA DOS PERSONAGENS
+# Characters' Page
 @app.route("/characters")
 def get_characters():
     url = "https://rickandmortyapi.com/api/character/"
@@ -44,7 +44,7 @@ def get_characters():
     return render_template("characters.html", characters=characters_data["results"])
 
 
-# PERFIL DE CADA PERSONAGEM
+# Character's Profile Page
 @app.route("/profile/<id>")
 def get_single_profile(id):
     url = f"https://rickandmortyapi.com/api/character/{id}"
@@ -55,7 +55,7 @@ def get_single_profile(id):
     return render_template("profile.html", profile=character_profile)
 
 
-# LISTA DE TODOS OS EPISÓDIOS
+# Episodes Page
 @app.route("/episodes")
 def get_episode_data():
     url = f"https://rickandmortyapi.com/api/episode/"
@@ -66,7 +66,7 @@ def get_episode_data():
     return render_template("episodes.html", episodes=episode_data["results"])
 
 
-# PERFIL DE CADA EPISÓDIO
+# Single Episode Page
 @app.route("/episode/<id>")
 def get_single_episode(id):
     url = f"https://rickandmortyapi.com/api/episode/{id}"
@@ -75,7 +75,7 @@ def get_single_episode(id):
         data = response.read()
         episode_profile = json.loads(data)
 
-        # fetches the characters list from each episode
+        # Fetches the characters list from each episode
         characters = []
         for character_url in episode_profile["characters"]:
             character_response = ur.urlopen(character_url)
@@ -93,7 +93,7 @@ def get_single_episode(id):
         return f"Erro inesperado: {str(e)}"
 
 
-# LISTA DE TODAS AS LOCALIZAÇÕES
+# Locations' Page
 @app.route("/locations")
 def get_location():
     url_for = "https://rickandmortyapi.com/api/location"
@@ -104,7 +104,7 @@ def get_location():
     return render_template("locations.html", locations=location_data["results"])
 
 
-# PERFIL DE CADA LOCALIZAÇÃO
+# Single Location PAge
 @app.route("/location/<id>")
 def get_single_location(id):
     url = f"https://rickandmortyapi.com/api/location/{id}"
@@ -113,7 +113,7 @@ def get_single_location(id):
         data = response.read()
         location_profile = json.loads(data)
 
-        # fetches the residents list from each location
+        # Fetches the residents list from each location
         residents = []
         for resident_url in location_profile["residents"]:
             resident_response = ur.urlopen(resident_url)
