@@ -78,19 +78,18 @@ def get_single_episode(id):
         # Fetches the characters list from each episode
         characters = []
         for character_url in episode_profile["characters"]:
-            character_response = ur.urlopen(character_url)
-            character_response_data = character_response.read()
-            character_data = json.loads(character_response_data)
-            characters.append(
-                {"id": character_data["id"], "name": character_data["name"]}
-            )
+            with ur.urlopen(character_url) as character_response:
+                character_data = json.loads(character_response.read())
+                characters.append(
+                    {"id": character_data["id"], "name": character_data["name"]}
+                )
 
         return render_template(
             "episode.html", episode=episode_profile, characters=characters
         )
 
     except Exception as e:
-        return f"Erro inesperado: {str(e)}"
+        return f"Unexpected error: {str(e)}"
 
 
 # Locations' Page
@@ -105,28 +104,29 @@ def get_location():
 
 
 # Single Location PAge
-@app.route("/location/<id>")
+@app.route("/location/<int:id>")
 def get_single_location(id):
     url = f"https://rickandmortyapi.com/api/location/{id}"
     try:
-        response = ur.urlopen(url)
-        data = response.read()
-        location_profile = json.loads(data)
+        with ur.urlopen(url) as response:
+            data = response.read()
+            location_profile = json.loads(data)
 
-        # Fetches the residents list from each location
-        residents = []
-        for resident_url in location_profile["residents"]:
-            resident_response = ur.urlopen(resident_url)
-            resident_data = resident_response.read()
-            resident_data = json.loads(resident_data)
-            residents.append({"id": resident_data["id"], "name": resident_data["name"]})
+            # Fetches the residents list from each location
+            residents = []
+            for resident_url in location_profile["residents"]:
+                with ur.urlopen(resident_url) as resident_response:
+                    resident_data = json.loads(resident_response.read())
+                    residents.append(
+                        {"id": resident_data["id"], "name": resident_data["name"]}
+                    )
 
-        return render_template(
-            "location.html", location=location_profile, residents=residents
-        )
+            return render_template(
+                "location.html", location=location_profile, residents=residents
+            )
 
     except Exception as e:
-        return f"Erro inesperado: {str(e)}"
+        return f"Unexpect error: {str(e)}"
 
 
 if __name__ == "__main__":
