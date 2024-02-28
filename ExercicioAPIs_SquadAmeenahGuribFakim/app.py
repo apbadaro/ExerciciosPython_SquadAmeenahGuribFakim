@@ -126,7 +126,8 @@ def get_single_location(id):
             )
 
     except Exception as e:
-        return f"Unexpect error: {str(e)}"
+        return f"Unexpected error: {str(e)}"
+
 
 
 if __name__ == "__main__":
