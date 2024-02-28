@@ -90,7 +90,7 @@ def get_single_episode(id):
         )
 
     except Exception as e:
-        return f"Erro inesperado: {str(e)}"
+        return f"Unexpected error: {str(e)}"
 
 
 # Locations' Page
@@ -126,7 +126,7 @@ def get_single_location(id):
         )
 
     except Exception as e:
-        return f"Erro inesperado: {str(e)}"
+        return f"Unexpected error: {str(e)}"
 
 
 if __name__ == "__main__":
