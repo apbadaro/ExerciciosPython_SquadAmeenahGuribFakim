@@ -103,7 +103,7 @@ def get_location():
     return render_template("locations.html", locations=location_data["results"])
 
 
-# Single Location PAge
+# Single Location Page
 @app.route("/location/<int:id>")
 def get_single_location(id):
     url = f"https://rickandmortyapi.com/api/location/{id}"
@@ -127,7 +127,6 @@ def get_single_location(id):
 
     except Exception as e:
         return f"Unexpected error: {str(e)}"
-
 
 
 if __name__ == "__main__":
