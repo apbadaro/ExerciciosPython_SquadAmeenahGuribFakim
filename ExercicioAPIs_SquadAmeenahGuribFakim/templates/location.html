@@ -28,6 +28,8 @@
                   >{{resident.name}}</a
                 >
               </li>
+              {% else %}
+              <li class="mb-1"><em>No residents in this location</em></li>
               {% endfor %}
             </ul>
           </li>
