@@ -37,9 +37,16 @@
       {% endif %}
       <br />
       <p>
-        <a href="/locations" class="btn btn-primary">Back</a>
+        <a href="#" class="btn btn-primary" onclick="goBack()">Back</a>
       </p>
     </div>
   </div>
 </div>
+
+<script>
+  function goBack() {
+    window.history.back();
+  }
+</script>
+
 {% endblock %}
