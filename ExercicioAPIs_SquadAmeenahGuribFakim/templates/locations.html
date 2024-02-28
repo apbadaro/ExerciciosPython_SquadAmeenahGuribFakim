@@ -1,43 +1,39 @@
 {% extends 'layout.html' %} {% block content %}
-<div>
-        <title>Localizações</title>
-        <style>
-            table {
-                border-collapse: collapse;
-                width: 100%;
-            }
-            th, td {
-                border: 1px solid #dddddd;
-                text-align: left;
-                padding: 8px;
-            }
-            th {
-                background-color: #f2f2f2;
-            }
-        </style>
-    </head>
-    <body>
 
-    <h2>Localizações</h2>
+<style>
+    .top {
+      margin-top: 30px;
+    }
+    .card-body {
+      height: 240px;
+      overflow: auto;
+    }
+  </style>
+  
+  <div class="container top">
+    <center><h1>Locations List</h1></center>
 
-    <table>
-    <tr>
-        <th>ID</th>
-        <th>Nome</th>
-        <th>Data de Lançamento</th>
-        <th>Código</th>
-    </tr>
-    <!-- Loop for para iterar sobre as localizações -->
+<div class="container top">
+  {% if locations %}
+  <div class="row">
     {% for location in locations %}
-        <tr>
-        <td>{{ location.id }}</td>
-        <td>{{ location.name }}</td>
-        <td>{{ location.created.split('T')[0] }}</td>
-        <td>{{ location.url.split('/')[-1] }}</td>
-        </tr>
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">{{location.name}}</h5>
+          <p class="card-text">Type: {{location.type}}</p>
+          <p class="card-text">Dimension: {{location.dimension}}</p>
+            <a href="/location/{{location.id}}" class="btn btn-primary"
+              >View details</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
     {% endfor %}
-    </table>
+  </div>
+  {% else %}
+  <p>No locations found.</p>
+  {% endif %}
 </div>
 {% endblock %}
-
-

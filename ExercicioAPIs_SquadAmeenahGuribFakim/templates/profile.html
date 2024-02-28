@@ -1,4 +1,15 @@
 {% extends 'layout.html' %} {% block content %}
+<style>
+  .top {
+    margin-top: 30px;
+  }
+</style>
+
+<div class="top">
+  <center><h1>{{profile.name}}</h1></center>
+  <br />
+</div>
+
 <div class="row">
   <div class="col-sm-3 col-6">
     <img
@@ -7,8 +18,13 @@
       class="img-fluid img-thumbnail"
     />
   </div>
-  <div class="col-sm-3 col-6">
-    <h1 class="h5">{{profile.name}}</h1>
+  <div class="col-sm-9 col-6">
+    <p>falta add: origem, localização e episódios em que aparece!!</p>
+
+    <p>
+      <a href="/characters" class="btn btn-primary">Back</a>
+    </p>
   </div>
 </div>
+
 {% endblock %}
