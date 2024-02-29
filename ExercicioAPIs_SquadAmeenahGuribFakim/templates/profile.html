@@ -18,7 +18,7 @@
       class="img-fluid img-thumbnail"
     />
   </div>
- <div class="col-sm-3 col-6">
+  <div class="col-sm-3 col-6">
     <h1 class="h5">Name:</h1>
     <h1 class="h5">{{profile.name}}</h1>
     <h1 class="h5">Species:</h1>
@@ -28,17 +28,15 @@
     <h1 class="h5">Origin:</h1>
     <h1 class="h5">{{profile.origin}}</h1>
     <p>
-      <a href="" class="btn btn-primary">Origin</a>
+      <a href="{{profile.origin.url}}" class="btn btn-primary">Origin</a>
     </p>
     <h1 class="h5">Location:</h1>
     <h1 class="h5">{{profile.location.url}}</h1>
     <p>
-      <a href="" class="btn btn-primary">Location</a>
+      <a href="{{profile.location.url}}" class="btn btn-primary">Location</a>
     </p>
 
-    <p>
-      <a href="#" class="btn btn-primary" onclick="goBack()">Back</a>
-    </p>
+
   </div>
 </div>
 </div>
