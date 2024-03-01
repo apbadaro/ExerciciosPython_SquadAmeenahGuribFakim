@@ -3,6 +3,7 @@
   .top {
     margin-top: 30px;
   }
+  .padding-top { padding:9px; }
 </style>
 
 <div class="top">
@@ -18,29 +19,21 @@
       class="img-fluid img-thumbnail"
     />
   </div>
-  <div class="col-sm-3 col-6">
-    <h1 class="h5">Name:</h1>
-    <h1 class="h5">{{profile.name}}</h1>
-    <h1 class="h5">Species:</h1>
-    <h1 class="h5">{{profile.species}}</h1>
-    <h1 class="h5">Gender:</h1>
-    <h1 class="h5">{{profile.gender}}</h1>
-    <h1 class="h5">Origin:</h1>
-    <h1 class="h5">{{profile.origin}}</h1>
-    <p>
-      <a href="{{profile.origin.url}}" class="btn btn-primary">Origin</a>
-    </p>
-    <h1 class="h5">Location:</h1>
-    <h1 class="h5">{{profile.location.url}}</h1>
-    <p>
-      <a href="{{profile.location.url}}" class="btn btn-primary">Location</a>
-    </p>
-
-
-  </div>
+  <div class="col-9 padding-top">
+    <p><strong>Name:</strong> {{profile.name}}</p>
+    <p><strong>Species:</strong> {{profile.species}}</p>
+    <p><strong>Status:</strong> {{profile.status}}</p>
+    <p><strong>Gender:</strong> {{profile.gender}}</p>
+    <p><strong>Origin:</strong> <a href="#" class="text-decoration-none">{{profile.origin.name}}</a></p>
+    <p><strong>Last known location:</strong> <a href="#" class="text-decoration-none"
+      >{{profile.location.name}}</a></p>
 </div>
 </div>
-
+</div>
+<br>
+<p>
+  <a href="#" class="btn btn-primary" onclick="goBack()">Back</a>
+</p>
 <script>
 function goBack() {
   window.history.back();
